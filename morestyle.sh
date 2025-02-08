@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+
 # !Jangan lupa chmod +x
 # Nama: Simulasi Termux Menu bagian Style (Python)
 # Dekripsi: Jika Menu pada Termux divisualisasikan sebagai skrip maka akan seperti ini

@@ -6,7 +6,7 @@
 # Kreator skrip ini @luisadha
 # Plugin: Ditujukan untuk penggunaan Mytermux
 
-python3 - <EOF
+
 import os
 import time
 
@@ -38,4 +38,3 @@ while True:
         os.system("bash ~/.scripts/fonts/fonts.sh")
     elif choice == 0:
         break
-EOF

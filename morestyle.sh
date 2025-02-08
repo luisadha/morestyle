@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env bash
 # !Jangan lupa chmod +x
 # Nama: Simulasi Termux Menu bagian Style (Python)
 # Dekripsi: Jika Menu pada Termux divisualisasikan sebagai skrip maka akan seperti ini
@@ -6,6 +6,7 @@
 # Kreator skrip ini @luisadha
 # Plugin: Ditujukan untuk penggunaan Mytermux
 
+python3 - <EOF
 import os
 import time
 
@@ -37,3 +38,4 @@ while True:
         os.system("bash ~/.scripts/fonts/fonts.sh")
     elif choice == 0:
         break
+EOF

@@ -1,46 +1,39 @@
-#!/usr/bin/bash
-# !Jangan lupa termux-fix-shebang
-# Nama: Simulasi Termux Menu bagian Style
-# Dekripsi: Jika Menu pada termux divisualisasikan sebagai skrip maka akan seperti ini
+#!/usr/bin/env python3
+# !Jangan lupa chmod +x
+# Nama: Simulasi Termux Menu bagian Style (Python)
+# Dekripsi: Jika Menu pada Termux divisualisasikan sebagai skrip maka akan seperti ini
 # Dependensi: Anda mungkin perlu menginstall Termux-Styling
 # Kreator skrip ini @luisadha
-# Plugin: Ditujukan untuk penggunaan Mytermux 
+# Plugin: Ditujukan untuk penggunaan Mytermux
 
-banner() {
-  echo "Please install 3rd-party dotfiles myTermux first!"
-  echo
-  echo "Simulation Termux Menu (Style)"
-  echo
-  echo "Version: 1.0"
-  echo "Author: luisadha"
-}
+import os
+import time
 
-while true; do
-  banner
+def banner():
+    print("Please install 3rd-party dotfiles myTermux first!\n")
+    print("Simulation Termux Menu (Style)\n")
+    print("Version: 1.0")
+    print("Author: luisadha\n")
 
-  select menu in "CHOOSE COLOR" "CHOOSE FONT"; do
-    [[ -n $menu ]] || { break; }
+while True:
+    banner()
 
-    case $menu in
-      "CHOOSE COLOR")
-        echo "You selected CHOOSE COLOR"
-        sleep 1
-     bash ~/.scripts/colorscheme/colors.sh
-        # Tambahkan perintah yang ingin dijalankan saat memilih CHOOSE COLOR
-        read -t 0.1
+    print("1) CHOOSE COLOR")
+    print("2) CHOOSE FONT")
+    print("0) EXIT")
+
+    try:
+        choice = int(input("\nSelect an option: ").strip())
+    except ValueError:
         continue
-        ;;
-      "CHOOSE FONT")
-        echo "You selected CHOOSE FONT"
-        sleep 1
-        bash ~/.scripts/fonts/fonts.sh
-        # Tambahkan perintah yang ingin dijalankan saat memilih CHOOSE FONT
-        read -t 0.1
-        continue
-        ;;
-    esac
-  done
 
-  # Keluar dari loop saat pengguna menekan tombol Enter
-  break
-done
+    if choice == 1:
+        print("You selected CHOOSE COLOR")
+        time.sleep(1)
+        os.system("bash ~/.scripts/colorscheme/colors.sh")
+    elif choice == 2:
+        print("You selected CHOOSE FONT")
+        time.sleep(1)
+        os.system("bash ~/.scripts/fonts/fonts.sh")
+    elif choice == 0:
+        break
